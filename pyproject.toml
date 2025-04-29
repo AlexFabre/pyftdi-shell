@@ -1,6 +1,6 @@
 [project]
 name = "pyftdi_shell"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
   { name="Alex Fabre", email="m.alexfabre@gmail.com" },
 ]
@@ -22,4 +22,4 @@ Homepage = "https://github.com/AlexFabre/pyftdi-shell"
 Issues = "https://github.com/AlexFabre/pyftdi-shell/issues"
 
 [project.scripts]
-commit-format = "pyftdi_shell.pyftdi_shell:main"
+pyftdi-shell = "pyftdi_shell.pyftdi_shell:main"
