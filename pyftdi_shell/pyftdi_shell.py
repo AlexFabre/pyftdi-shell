@@ -1,7 +1,7 @@
 import sys
-from i2c_shell import I2CShell
-from spi_shell import SPIShell
-from gpio_shell import GPIOShell
+from . import i2c_shell as I2C
+from . import spi_shell as SPI
+from . import gpio_shell as GPIO
 import argparse
 
 try:
@@ -23,11 +23,11 @@ def main():
     args = parser.parse_args()
 
     if args.function == "i2c":
-        shell = I2CShell(args.ftdi_url)
+        shell = I2C.I2CShell(args.ftdi_url)
     elif args.function == "spi":
-        shell = SPIShell(args.ftdi_url)
+        shell = SPI.SPIShell(args.ftdi_url)
     elif args.function == "gpio":
-        shell = GPIOShell(args.ftdi_url, 0xFF)
+        shell = GPIO.GPIOShell(args.ftdi_url, 0xFF)
 
     shell.run()
     
